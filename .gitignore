@@ -25,3 +25,6 @@ venv/
 .vscode/
 .idea/
 .DS_Store
+
+# Exception: this provided data file must be tracked
+!data/sensor_log.csv
