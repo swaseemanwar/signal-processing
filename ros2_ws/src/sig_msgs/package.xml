@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>sig_msgs</name>
+  <version>0.1.0</version>
+  <description>
+    Custom messages for the signal processing pipeline.
+    StampedInt64:   encoder stream (counts)
+    StampedFloat64: accelerometer stream (m/s²)
+
+    Why two separate message types instead of one combined message?
+    The two streams have different types, different drop patterns, and
+    independent consumers. Keeping them separate lets the C++ and Python
+    processing nodes subscribe to only what they need.
+  </description>
+  <maintainer email="swaseemanwar@gmail.com">Waseem Anwar</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>std_msgs</depend>
+  <build_depend>rosidl_default_generators</build_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <member_of_group>rosidl_interface_packages</member_of_group>
+</package>
