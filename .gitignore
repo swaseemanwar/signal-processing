@@ -28,3 +28,6 @@ venv/
 
 # Exception: this provided data file must be tracked
 !data/sensor_log.csv
+
+# Office/editor lock files
+.~lock.*
