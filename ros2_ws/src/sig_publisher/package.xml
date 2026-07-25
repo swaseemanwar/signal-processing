@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>sig_publisher</name>
+  <version>0.1.0</version>
+  <description>
+    Sensor data publisher node for the signal processing pipeline.
+
+    Two modes:
+      synthetic  -- generates int + float streams with configurable
+                    jitter (--jitter 0.2 = ±20%) and drop rate
+      replay     -- replays sensor_log.csv at original timestamps
+
+    In both modes header.stamp is set from the data timestamp, never
+    from wall clock, so downstream nodes compute correct dt.
+  </description>
+  <maintainer email="swaseemanwar@gmail.com">Waseem Anwar</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+  <depend>rclpy</depend>
+  <depend>sig_msgs</depend>
+  <depend>std_msgs</depend>
+</package>
