@@ -22,3 +22,11 @@ target_compile_options(siglib INTERFACE
 # ── Tests ─────────────────────────────────────────────────────────────────────
 enable_testing()
 add_subdirectory(tests)
+
+# ── Python bindings (opt-in) ──────────────────────────────────────────────────
+# Default OFF so that  cmake .. && make  works with zero Python/pybind11 deps.
+# Enable with:  cmake .. -DBUILD_BINDINGS=ON
+option(BUILD_BINDINGS "Build pybind11 Python extension module" OFF)
+if(BUILD_BINDINGS)
+  add_subdirectory(bindings)
+endif()
