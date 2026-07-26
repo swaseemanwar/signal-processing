@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>sig_proc_cpp</name>
+  <version>0.1.0</version>
+  <description>
+    C++ signal processing node.
+
+    Subscribes to /sensor/encoder (StampedInt64) and /sensor/accel (StampedFloat64).
+    Applies siglib filters directly (no Python, no pybind11).
+    Publishes filtered outputs on /filtered/encoder and /filtered/accel.
+
+    Uses header.stamp for dt computation — never arrival time.
+    Dropout policy: dt-extended (alpha recomputed per sample, no special case needed).
+    QoS: reliable + keep_last(100).
+  </description>
+  <maintainer email="swaseemanwar@gmail.com">Waseem Anwar</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>sig_msgs</depend>
+  <depend>std_msgs</depend>
+</package>
