@@ -15,6 +15,7 @@ setup(
     entry_points={
         'console_scripts': [
             'sig_proc_py = sig_proc_py.proc_node:main',
+            'parity_check = sig_proc_py.parity_check:main',
         ],
     },
 )
