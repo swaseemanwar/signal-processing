@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>sig_proc_py</name>
+  <version>0.1.0</version>
+  <description>
+    Python signal processing node using siglib_py pybind11 bindings.
+
+    Mirrors sig_proc_cpp exactly — same topics, same filter parameters,
+    same QoS — but implemented in Python via the pybind11 module.
+
+    Output must match sig_proc_cpp within stated tolerance:
+      integer streams: bit-exact
+      float streams:   rtol=1e-6
+
+    Why have both C++ and Python nodes?
+      Proves the pybind11 bindings are correct end-to-end.
+      Python node is easier to prototype and visualise with.
+      C++ node is faster for production deployment.
+  </description>
+  <maintainer email="swaseemanwar@gmail.com">Waseem Anwar</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+  <depend>rclpy</depend>
+  <depend>sig_msgs</depend>
+  <depend>std_msgs</depend>
+</package>
