@@ -45,9 +45,9 @@ accel      = []
 with open(DATA_PATH, newline='') as f:
     reader = csv.DictReader(f)
     for row in reader:
-        timestamps.append(float(row['timestamp']))
-        encoder.append(int(row['encoder']))
-        accel.append(float(row['accel']))
+        timestamps.append(float(row['timestamp_s']))
+        encoder.append(int(row['encoder_count']))
+        accel.append(float(row['accel_x_mss']))
 
 timestamps = np.array(timestamps)
 encoder    = np.array(encoder,    dtype=np.int32)
