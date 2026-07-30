@@ -1,5 +1,6 @@
 # C++ / CMake
 build/
+build_py/
 *.o
 *.so
 *.a

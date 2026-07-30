@@ -12,12 +12,12 @@ find_package(std_msgs REQUIRED)
 # cmake even without a ROS environment.
 add_library(siglib INTERFACE)
 target_include_directories(siglib INTERFACE
-  ${CMAKE_CURRENT_SOURCE_DIR}/../../siglib/include)
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../../siglib/include)
 target_compile_features(siglib INTERFACE cxx_std_17)
 
 # ── Processing node ───────────────────────────────────────────────────────────
 add_executable(sig_proc_cpp_node src/proc_node.cpp)
-target_link_libraries(sig_proc_cpp_node PRIVATE siglib)
+target_link_libraries(sig_proc_cpp_node siglib)
 ament_target_dependencies(sig_proc_cpp_node rclcpp sig_msgs std_msgs)
 
 install(TARGETS sig_proc_cpp_node

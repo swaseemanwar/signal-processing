@@ -125,10 +125,10 @@ class SigPublisher(Node):
     def _replay_thread(self, rows):
         prev_ts = None
         for row in rows:
-            # timestamp_ns column from sensor_log.csv
-            ts_ns     = int(float(row['timestamp']) * 1e9)
-            enc_val   = int(row['encoder'])
-            accel_val = float(row['accel'])
+            # column names from sensor_log.csv: timestamp_s, encoder_count, accel_x_mss
+            ts_ns     = int(float(row['timestamp_s']) * 1e9)
+            enc_val   = int(row['encoder_count'])
+            accel_val = float(row['accel_x_mss'])
 
             if prev_ts is not None:
                 dt_s = (ts_ns - prev_ts) * 1e-9

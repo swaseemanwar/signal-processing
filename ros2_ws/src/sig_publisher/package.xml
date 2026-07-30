@@ -20,4 +20,8 @@
   <depend>rclpy</depend>
   <depend>sig_msgs</depend>
   <depend>std_msgs</depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
 </package>
